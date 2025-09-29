@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portal Link — Tugas</title>
+  <style>
+    /* Reset & base */
+    :root{
+      --bg: #f4f6f8;
+      --card-bg: #fff;
+      --maxw: 960px;
+      --radius: 12px;
+      --gap: 14px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      margin:0;
+      background:var(--bg);
+      color:#111;
+      line-height:1.4;
+      padding:28px 16px;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .container{
+      max-width:var(--maxw);
+      margin:0 auto;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    header h1{
+      font-size:1.25rem;
+      margin:0;
+    }
+    header p{
+      margin:0;
+      color:#555;
+      font-size:0.95rem;
+    }
+
+    /* Card */
+    .card{
+      background:var(--card-bg);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow: 0 6px 20px rgba(20,30,40,0.06);
+    }
+
+    /* Instruction text */
+    .intro{
+      margin-bottom:14px;
+      color:#333;
+      font-size:0.96rem;
+    }
+
+    /* Table layout for links */
+    .link-table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing: var(--gap);
+    }
+
+    /* make each table cell a card */
+    .link-table td{
+      padding:18px;
+      border-radius:10px;
+      vertical-align:middle;
+      min-width:160px;
+      text-align:left;
+      box-shadow: 0 4px 10px rgba(15,20,30,0.04);
+    }
+
+    /* different backgrounds (kept accessible: not too low contrast) */
+    .bg-search-1{background:linear-gradient(135deg,#e8f0fe,#dbeafe);}
+    .bg-search-2{background:linear-gradient(135deg,#fff7ed,#ffedd5);}
+    .bg-search-3{background:linear-gradient(135deg,#ecfdf5,#d1fae5);}
+    .bg-news-1{background:linear-gradient(135deg,#fff1f2,#ffe4e6);}
+    .bg-news-2{background:linear-gradient(135deg,#fef3c7,#fef9c3);}
+    .bg-news-3{background:linear-gradient(135deg,#eef2ff,#e0e7ff);}
+
+    .site-title{
+      font-weight:600;
+      display:block;
+      margin-bottom:6px;
+    }
+    .site-desc{
+      margin:0;
+      font-size:0.9rem;
+      color:#2b2b2b;
+      opacity:0.9;
+    }
+
+    a.btn{
+      display:inline-block;
+      margin-top:10px;
+      text-decoration:none;
+      font-weight:600;
+      padding:8px 12px;
+      border-radius:8px;
+      background:rgba(0,0,0,0.06);
+      color:inherit;
+      transition:transform .12s ease, box-shadow .12s;
+    }
+    a.btn:focus, a.btn:hover{ transform:translateY(-2px); box-shadow:0 6px 18px rgba(10,20,30,0.08); outline: none; }
+
+    /* Responsive: on narrow screens stack cells */
+    @media (max-width:640px){
+      .link-table, .link-table tbody, .link-table tr{
+        display:block;
+        width:100%;
+      }
+      .link-table tr{ margin-bottom:var(--gap); }
+      .link-table td{
+        display:block;
+        width:100%;
+      }
+    }
+
+    /* footer */
+    footer{
+      margin-top:16px;
+      font-size:0.85rem;
+      color:#666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Portal Link — Mesin Pencari &amp; Berita</h1>
+    </header>
+
+    <main class="card" role="main" aria-labelledby="portal-heading">
+      <h2 id="portal-heading" class="intro">Klik tombol untuk membuka situs (akan membuka di tab baru).</h2>
+
+      <!-- Tabel berisi hyperlink, tiap sel dengan warna latar berbeda -->
+      <table class="link-table" role="grid" aria-label="Tabel link mesin pencari dan berita">
+        <tbody>
+          <!-- Baris 1: Mesin pencari -->
+          <tr role="row">
+            <td role="gridcell" class="bg-search-1">
+              <span class="site-title">Google</span>
+              <p class="site-desc">Mesin pencari populer, hasil global.</p>
+              <a class="btn" href="https://www.google.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Google">Buka Google</a>
+            </td>
+
+            <td role="gridcell" class="bg-search-2">
+              <span class="site-title">Bing</span>
+              <p class="site-desc">Mesin pencari dari Microsoft.</p>
+              <a class="btn" href="https://www.bing.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Bing">Buka Bing</a>
+            </td>
+
+            <td role="gridcell" class="bg-search-3">
+              <span class="site-title">DuckDuckGo</span>
+              <p class="site-desc">Fokus privasi — tidak melacak.</p>
+              <a class="btn" href="https://duckduckgo.com" target="_blank" rel="noopener noreferrer" aria-label="Buka DuckDuckGo">Buka DuckDuckGo</a>
+            </td>
+          </tr>
+
+          <!-- Baris 2: Berita internasional -->
+          <tr role="row">
+            <td role="gridcell" class="bg-news-1">
+              <span class="site-title">BBC News</span>
+              <p class="site-desc">Berita internasional dan feature.</p>
+              <a class="btn" href="https://www.bbc.com/news" target="_blank" rel="noopener noreferrer" aria-label="Buka BBC News">Buka BBC</a>
+            </td>
+
+            <td role="gridcell" class="bg-news-2">
+              <span class="site-title">CNN</span>
+              <p class="site-desc">Berita dunia, ekonomi, dan breaking news.</p>
+              <a class="btn" href="https://www.cnn.com" target="_blank" rel="noopener noreferrer" aria-label="Buka CNN">Buka CNN</a>
+            </td>
+
+            <td role="gridcell" class="bg-news-3">
+              <span class="site-title">Reuters</span>
+              <p class="site-desc">Liputan pasar & berita cepat.</p>
+              <a class="btn" href="https://www.reuters.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Reuters">Buka Reuters</a>
+            </td>
+          </tr>
+
+          <!-- Baris 3: Berita Indonesia -->
+          <tr role="row">
+            <td role="gridcell" class="bg-search-1">
+              <span class="site-title">Kompas</span>
+              <p class="site-desc">Portal berita berbahasa Indonesia.</p>
+              <a class="btn" href="https://www.kompas.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Kompas">Buka Kompas</a>
+            </td>
+
+            <td role="gridcell" class="bg-search-2">
+              <span class="site-title">Detik</span>
+              <p class="site-desc">Portal berita cepat dan aktual.</p>
+              <a class="btn" href="https://www.detik.com" target="_blank" rel="noopener noreferrer" aria-label="Buka Detik">Buka Detik</a>
+            </td>
+
+            <td role="gridcell" class="bg-search-3">
+              <span class="site-title">Tempo</span>
+              <p class="site-desc">Investigasi & berita feature.</p>
+              <a class="btn" href="https://www.tempo.co" target="_blank" rel="noopener noreferrer" aria-label="Buka Tempo">Buka Tempo</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer>
+        <p>Catatan: setiap link dibuka di tab baru (target="_blank") untuk menjaga halaman portal tetap terbuka.</p>
+      </footer>
+    </main>
+  </div>
+</body>
+</html>

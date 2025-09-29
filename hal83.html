@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Pendaftaran Peserta BPJS Kesehatan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+    }
+    .form-container {
+      width: 500px;
+      margin: 50px auto;
+      background-color: #f7d8e3; /* warna pink muda form */
+      padding: 0; /* hilangkan padding atas biar header nyatu */
+      border-radius: 8px;
+      overflow: hidden; /* biar header rata sama body */
+    }
+    h2 {
+      text-align: center;
+      color: white; /* teks putih */
+      background-color: #d46a83; /* pink tua */
+      padding: 12px;
+      margin: 0; /* hilangkan margin default */
+      font-size: 18px;
+    }
+    table {
+      width: 100%;
+      padding: 15px;
+    }
+    td {
+      padding: 8px;
+    }
+    input, select {
+      width: 100%;
+      padding: 5px;
+    }
+    .buttons {
+      text-align: left;
+      margin: 15px;
+    }
+    .buttons input {
+      width: 80px;
+      height: 30px;
+      margin-right: 10px;
+      background-color: #6d4c55;
+      color: white;
+      border: 1px solid #333;
+      cursor: pointer;
+    }
+    .buttons input:hover {
+      background-color: #4b3037;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Pendaftaran Peserta BPJS Kesehatan</h2>
+    <form>
+      <table>
+        <tr>
+          <td>No. Registrasi</td>
+          <td><input type="text" name="registrasi"></td>
+        </tr>
+        <tr>
+          <td>No. KTP/NIK</td>
+          <td><input type="text" name="ktp"></td>
+        </tr>
+        <tr>
+          <td>Nama Lengkap</td>
+          <td><input type="text" name="nama"></td>
+        </tr>
+        <tr>
+          <td>Jenis Kelamin</td>
+          <td>
+            <select name="gender">
+              <option value="Laki-Laki">Laki-Laki</option>
+              <option value="Perempuan">Perempuan</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Tempat Lahir</td>
+          <td><input type="text" name="tempatlahir"></td>
+        </tr>
+        <tr>
+          <td>Tanggal Lahir</td>
+          <td><input type="date" name="tgllahir"></td>
+        </tr>
+        <tr>
+          <td>Status Pernikahan</td>
+          <td>
+            <select name="status">
+              <option value="Kawin">Kawin</option>
+              <option value="Belum Kawin">Belum Kawin</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Hubungan Keluarga</td>
+          <td>
+            <select name="hubungan">
+              <option value="Kepala Keluarga">Kepala Keluarga</option>
+              <option value="Istri">Istri</option>
+              <option value="Anak">Anak</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Nomor Ponsel</td>
+          <td><input type="text" name="ponsel"></td>
+        </tr>
+        <tr>
+          <td>NPWP</td>
+          <td><input type="text" name="npwp"></td>
+        </tr>
+        <tr>
+          <td>Kelas Rawat</td>
+          <td>
+            <select name="kelas">
+              <option value="Kelas 1">Kelas 1</option>
+              <option value="Kelas 2">Kelas 2</option>
+              <option value="Kelas 3">Kelas 3</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+      <div class="buttons">
+        <input type="submit" value="Daftar">
+        <input type="reset" value="Reset">
+      </div>
+    </form>
+  </div>
+</body>
+</html>
